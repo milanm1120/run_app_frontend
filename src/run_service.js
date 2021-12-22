@@ -12,6 +12,7 @@ class RunService {
                 r.attachToDom()
             }
         })
+        .catch() 
     }
 
 }

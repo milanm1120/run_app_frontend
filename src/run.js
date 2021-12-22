@@ -1,5 +1,6 @@
 class Run {
     static all = [];
+    static container = document.getElementById("runs-container")
     constructor({id, time, distance, run_type, comments, runner_id, runner}){
         this.id = id
         this.time = time
@@ -15,14 +16,19 @@ class Run {
     }
 
     render(){
-        return this.element.innerHTML = `
+        this.element.innerHTML = `
         <div data-id="${this.id}">
             <h3 class= "run type">${this.run_type}</h3>
-            <h2 class= "distance">${this.distance}</h2>
+            <h2 class= "distance">${this.distance} Miles</h2>
             <h2 class= "time">${this.time}</h2>
             <p class= "comments">${this.comments}</p>
         </div>
         `
+        return this.element
+    }
+
+    attachToDom(){
+        Run.container.appendChild(this.render())
     }
 
 }
