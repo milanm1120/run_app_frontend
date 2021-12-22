@@ -6,7 +6,12 @@ class RunService {
     getRuns(){
         fetch(this.port + `/runs`)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            for(const run of data){
+                let r = new Run(run)
+                r.attachToDom()
+            }
+        })
     }
 
 }

@@ -7,5 +7,10 @@ class Run {
         this.comments = comments
         this.runner_id = runner_id
         this.runner = runner
+        this.element = document.createElement('li');
+        this.element.dataset['id'] = id;
+        this.element.id = `comment-${id}`
     }
+
+
 }
