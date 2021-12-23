@@ -15,4 +15,19 @@ class RunService {
         .catch() 
     }
 
+    createRuns(){
+        const RunInfo = {
+            run: {
+               run_type: RunTypeValue.value,
+               time: RunTimeValue.value,
+               distance: RunDistanceValue.value,
+               comments: RunCommentsValue.value,
+            }
+        }
+        //debugger
+        fetch(this.port + `/runs`)
+        .then(response => response.json())
+        .then(data => console.log(data))
+    }
+
 }
