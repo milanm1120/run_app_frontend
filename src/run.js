@@ -12,6 +12,7 @@ class Run {
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;
         this.element.id = `run-${id}`;
+        this.element.addEventListener('click', this.handleClick)
         Run.all.push(this)
     }
 
@@ -22,11 +23,26 @@ class Run {
             <h2 class= "distance">${this.distance} Miles</h2>
             <h2 class= "time">${this.time} Minutes</h2>
             <p class= "comments">${this.comments}</p>
+        </div>
             <button class="edit" data-id=${this.id}>Edit Run</button>
             <button class="delete" data-id=${this.id}>Delete Run</button>
-        </div>
         `
         return this.element
+    }
+
+    handleClick = (e) => {
+        if(e.target.innerText === "Edit Run"){
+            console.log(e.target)
+            this.createEditForm()
+        }else if(e.target.innerText === "Delete Run"){
+            console.log(e.target)
+        }else if(e.target.innerText === "Save Run"){
+            console.log(e.target)
+        }
+    }
+
+    createEditForm(){
+        debugger
     }
 
     attachToDom(){
