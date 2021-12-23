@@ -34,9 +34,12 @@ class RunService {
             body: JSON.stringify(runInfo)
         }
 
-        fetch(this.port + `/runs`)
+        fetch(this.port + `/runs`, configObject)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            const r = new Run(data)
+            r.attachToDom()
+        })
     }
 
 }

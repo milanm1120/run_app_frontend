@@ -22,6 +22,8 @@ class Run {
             <h2 class= "distance">${this.distance} Miles</h2>
             <h2 class= "time">${this.time} Minutes</h2>
             <p class= "comments">${this.comments}</p>
+            <button class="edit" data-id=${this.id}>Edit Run</button>
+            <button class="delete" data-id=${this.id}>Delete Run</button>
         </div>
         `
         return this.element
