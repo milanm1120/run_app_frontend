@@ -20,7 +20,7 @@ class Run {
         <div data-id="${this.id}">
             <h3 class= "run type">${this.run_type}</h3>
             <h2 class= "distance">${this.distance} Miles</h2>
-            <h2 class= "time">${this.time}</h2>
+            <h2 class= "time">${this.time} Minutes</h2>
             <p class= "comments">${this.comments}</p>
         </div>
         `

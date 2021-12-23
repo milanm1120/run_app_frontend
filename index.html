@@ -13,7 +13,26 @@
     <title>RunTracker App</title>
 </head>
 <body>
-        <div id="run-form"></div>
+        <div id="run-form">
+            <h2> Add A Run</h2>
+            <form id="run-form">
+                <label for= "run-type">Run Type:</label>
+                <input type= "text" name= "type" id= "run-type" /><br>
+                <label for= "run-distance">Distance:</label>
+                <input type= "text" name= "distance" id= "run-distance" />(miles)<br>
+                <label for= "run-time">Time:</label>
+                <input type= "text" name= "time" id= "run-time" />(seconds)<br>
+                <label for= "run-comments">Comments:</label>
+                <input type= "text" name= "comments" id= "run-comments" /><br>
+                    <input type="text" name="runner" id="runner-name">
+                    <input type="text" name="runner" id="runner-age">
+                    <input type="text" name="runner" id="runner-gender">
+                    <input type="text" name="runner" id="runner-height">
+                    <input type="text" name="runner" id="runner-weight">
+                <select name="runner_id" id="runner-dropdown"></select><br>
+                <input type="Submit" value="Add Run" />
+            </form>
+        </div>
         <div id="runners"></div>
         <div id="runs-container"></div>
 </body>
