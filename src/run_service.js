@@ -16,15 +16,24 @@ class RunService {
     }
 
     createRuns(){
-        const RunInfo = {
+        const runInfo = {
             run: {
-               run_type: RunTypeValue.value,
-               time: RunTimeValue.value,
-               distance: RunDistanceValue.value,
-               comments: RunCommentsValue.value,
+               run_type: runTypeValue.value,
+               time: runTimeValue.value,
+               distance: runDistanceValue.value,
+               comments: runCommentsValue.value,
                runner_id: dropDown.value
             }
         }
+        const configObject = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(runInfo)
+        }
+
         fetch(this.port + `/runs`)
         .then(response => response.json())
         .then(data => console.log(data))
