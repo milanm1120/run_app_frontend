@@ -22,9 +22,9 @@ class RunService {
                time: RunTimeValue.value,
                distance: RunDistanceValue.value,
                comments: RunCommentsValue.value,
+               //runner_id: RunnerId
             }
         }
-        //debugger
         fetch(this.port + `/runs`)
         .then(response => response.json())
         .then(data => console.log(data))

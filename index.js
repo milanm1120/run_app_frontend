@@ -2,10 +2,11 @@ const port = `http://localhost:3000`;
 const runCall = new RunService(port);
 const form = document.getElementById("run-form");
 const dropDown = document.getElementById("runner-dropdown");
-const RunTypeValue = document.getElementById("run-type");
-const RunTimeValue = document.getElementById("run-time");
-const RunDistanceValue = document.getElementById("run-distance");
-const RunCommentValue = document.getElementById("run-comments");
+const runTypeValue = document.getElementById("run-type");
+const runTimeValue = document.getElementById("run-time");
+const runDistanceValue = document.getElementById("run-distance");
+const runCommentsValue = document.getElementById("run-comments");
+//const runnerIdValue = document.getElementById("run-comments");
 
 runCall.getRuns('run-tracker-')
 
