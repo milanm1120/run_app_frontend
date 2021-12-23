@@ -7,7 +7,10 @@ class RunnerService{
         fetch(`${this.port}/runners`)
         .then(response => response.json())
         .then(json => {
-            debugger
+            json.forEach(element => {
+                const r = new Runner(element)
+                r.addToDropDown()
+            })
         })
     }
 }

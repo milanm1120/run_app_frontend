@@ -1,5 +1,6 @@
 const port = `http://localhost:3000`;
 const runCall = new RunService(port);
+const runnerCall = new RunnerService(port);
 const form = document.getElementById("run-form");
 const dropDown = document.getElementById("runner-dropdown");
 const runTypeValue = document.getElementById("run-type");
@@ -8,7 +9,8 @@ const runDistanceValue = document.getElementById("run-distance");
 const runCommentsValue = document.getElementById("run-comments");
 //const runnerIdValue = document.getElementById("run-comments");
 
-runCall.getRuns('run-tracker-')
+runCall.getRuns()
+runnerCall.getRunners()
 
 form.addEventListener('submit', handleSubmit)
 

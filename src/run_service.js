@@ -22,7 +22,7 @@ class RunService {
                time: RunTimeValue.value,
                distance: RunDistanceValue.value,
                comments: RunCommentsValue.value,
-               //runner_id: RunnerId
+               runner_id: dropDown.value
             }
         }
         fetch(this.port + `/runs`)

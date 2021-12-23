@@ -7,4 +7,11 @@ class Runner {
         this.weight = weight
         this.id = id
     }
+
+    addToDropDown(){
+        const option = document.createElement('option');
+        option.value = this.id
+        option.innerText = this.name
+        dropDown.appendChild(option)
+    }
 }
