@@ -31,7 +31,7 @@ class Run {
     }
 
     saveUpdatedRun(){
-        this.run = this.element.querySelector(".edit-run").value;
+        this.run_type = this.element.querySelector(".edit-run").value;
         this.distance = this.element.querySelector(".edit-distance").value;
         this.time = this.element.querySelector(".edit-time").value;
         this.comments = this.element.querySelector(".edit-comments").value;
@@ -46,6 +46,7 @@ class Run {
             this.createEditForm()
         }else if(e.target.innerText === "Delete Run"){
             console.log(e.target)
+            runCall.deleteRun(e)
         }else if(e.target.innerText === "Save Run"){
             console.log("saved")
             e.target.innerText = "Edit Run"

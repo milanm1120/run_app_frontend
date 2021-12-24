@@ -43,9 +43,9 @@ class RunService {
     }
 
     updateRun(run){
-        const {run, distance, time, comments} = run
+        const {run_type, distance, time, comments, id} = run
         const runInfo = {
-            run,
+            run_type,
             distance,
             time,
             comments
@@ -59,5 +59,12 @@ class RunService {
             },
             body: JSON.stringify(runInfo)
         }
+
+        fetch(this.port + `/runs/${id}`, configObject)
+        .then(response => response.json())
+        .then(data => {
+            // const r = new Run(data)
+            run.render()
+        })
     }
 }
