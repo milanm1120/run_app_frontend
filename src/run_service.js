@@ -67,4 +67,8 @@ class RunService {
             run.render()
         })
     }
+
+    deleteRun(e){
+        debugger
+    }
 }
