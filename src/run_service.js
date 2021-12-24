@@ -60,7 +60,7 @@ class RunService {
             body: JSON.stringify(runInfo)
         }
 
-        fetch(this.port + `/runs/${id}`, configObject)
+        fetch(`${this.port}/runs/${id}`, configObject)
         .then(response => response.json())
         .then(data => {
             // const r = new Run(data)
@@ -69,6 +69,10 @@ class RunService {
     }
 
     deleteRun(e){
-        debugger
+        const id = e.target.dataset.id
+        e.target.parentElement.remove()
+        fetch(`${this.port}/runs/${id}`, {method: 'DELETE'})
+        .then(response => response.json())
+        .then(json => alert(json.message))
     }
 }
