@@ -33,11 +33,12 @@ class Run {
     handleClick = (e) => {
         if(e.target.innerText === "Edit Run"){
             console.log(e.target)
+                e.target.innerText = "Save Run"
             this.createEditForm()
         }else if(e.target.innerText === "Delete Run"){
             console.log(e.target)
         }else if(e.target.innerText === "Save Run"){
-            console.log(e.target)
+            console.log("saved")
         }
     }
 
