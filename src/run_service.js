@@ -42,4 +42,22 @@ class RunService {
         })
     }
 
+    updateRun(run){
+        const {run, distance, time, comments} = run
+        const runInfo = {
+            run,
+            distance,
+            time,
+            comments
+        }
+
+        const configObject = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(runInfo)
+        }
+    }
 }

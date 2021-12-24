@@ -35,7 +35,8 @@ class Run {
         this.distance = this.element.querySelector(".edit-distance").value;
         this.time = this.element.querySelector(".edit-time").value;
         this.comments = this.element.querySelector(".edit-comments").value;
-        debugger
+        runCall.updateRun(this)
+        //debugger
     }
 
     handleClick = (e) => {
