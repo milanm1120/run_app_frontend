@@ -20,8 +20,8 @@ class Run {
         this.element.innerHTML = `
         <div data-id="${this.id}">
             <h3 class= "run type">${this.run_type}</h3>
-            <h2 class= "distance">${this.distance} Miles</h2>
-            <h2 class= "time">${this.time} Minutes</h2>
+            <h2 class= "distance">${this.distance}</h2> Miles
+            <h2 class= "time">${this.time}</h2> Minutes
             <p class= "comments">${this.comments}</p>
         </div>
             <button class="edit" data-id=${this.id}>Edit Run</button>
@@ -62,6 +62,13 @@ class Run {
             element.outerHTML = `<input type="text" class="edit-${name}" value="${inputValue}" />`
         }
         //debugger
+    }
+
+    addToDropDown(){
+        const runType = document.createElement('runType')
+        runType.value = this.id
+        runType.innerText = this.run_type;
+        this.addToDropDown.appendChild(runType)
     }
 
     attachToDom(){

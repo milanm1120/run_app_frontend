@@ -16,8 +16,22 @@
         <div id="run-form">
             <h2> Add A Run</h2>
             <form id="run-form">
-                <label for= "run-type">Run Type:</label>
-                <input type= "text" name= "type" id= "run-type" /><br>
+                <div id="run-type-dropdown">
+                    <label for= "run-type">Select Your Run:</label>
+                    <select name="run-type" id="run-type">
+                        <option value="">--select--</option>
+                        <option value="Base Run">Base Run</option>
+                        <option value="Long Run">Long Run</option>
+                        <option value="Progression Run">Progression Run</option>
+                        <option value="Fartlek">Fartlek</option>
+                        <option value="Hill Run">Hill Run</option>
+                        <option value="Tempo Run">Tempo Run</option>
+                        <option value="Interval Run">Interval Run</option>
+                        <option value="Recovery Run">Recovery Run</option>
+                    </select>
+                </div>
+                <!-- <label for= "run-type">Run Type:</label>
+                <input type= "text" name= "type" id= "run-type" /><br> -->
                 <label for= "run-distance">Distance:</label>
                 <input type= "text" name= "distance" id= "run-distance" />(miles)<br>
                 <label for= "run-time">Time:</label>
