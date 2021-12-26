@@ -20,13 +20,13 @@ function handleSubmit(e){
 }
 
 // Get the modal
-let modal = document.getElementById("AddRunModal");
+let modal = document.getElementById("AddModal");
 
 // Get the button that opens the modal
 let btn = document.getElementById("AddRunButton");
 
 // Get the <span> element that closes the modal
-let span = document.getElementsByClassName("RunClose")[0];
+let span = document.getElementsByClassName("close")[0];
 
 let submit = document.getElementById("Submit");
 
