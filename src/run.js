@@ -16,6 +16,7 @@ class Run {
         this.element.addEventListener('click', this.handleClick)
         Run.all.push(this)
     }
+        
 
     render(){
         this.element.innerHTML = `
@@ -79,5 +80,7 @@ class Run {
     attachToDom(){
         Run.container.appendChild(this.render())
     }
+
+    
 
 }

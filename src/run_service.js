@@ -76,3 +76,4 @@ class RunService {
         .then(json => alert(json.message))
     }
 }
+
