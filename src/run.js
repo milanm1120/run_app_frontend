@@ -1,7 +1,8 @@
 class Run {
     static all = [];
     static container = document.getElementById("runs-container")
-    constructor({id, time, distance, run_type, comments, runner_id, runner}){
+    constructor({id, time, distance, run_type, comments, runner_id, runner})
+    {
         this.id = id
         this.time = time
         this.distance = distance
@@ -9,7 +10,7 @@ class Run {
         this.comments = comments
         this.runner_id = runner_id
         this.runner = runner
-        this.element = document.createElement('li');
+        this.element = document.createElement('ul');
         this.element.dataset['id'] = id;
         this.element.id = `run-${id}`;
         this.element.addEventListener('click', this.handleClick)
@@ -18,14 +19,18 @@ class Run {
 
     render(){
         this.element.innerHTML = `
-        <div data-id="${this.id}">
-            <h3 class= "run type">${this.run_type}</h3>
-            <h2 class= "distance">${this.distance}</h2> Miles
-            <h2 class= "time">${this.time}</h2> Minutes
-            <p class= "comments">${this.comments}</p>
+        <div id="runs-card">
+            <div data-id="${this.id}">
+                <h2 class= "runner_id">-${this.runner.name}-</h3>
+                <h3 class= "run type">${this.run_type}</h3>
+                <h2 class= "distance">${this.distance}</h2> Miles<br>
+                <h2 class= "time">${this.time}</h2> Minutes
+                <p class= "comments">Notes:<br> ${this.comments}</p>
+            </div>
+            
+                <button class="edit" data-id=${this.id}>Edit Run</button>
+                <button class="delete" data-id=${this.id}>Delete Run</button>
         </div>
-            <button class="edit" data-id=${this.id}>Edit Run</button>
-            <button class="delete" data-id=${this.id}>Delete Run</button>
         `
         return this.element
     }
@@ -64,12 +69,12 @@ class Run {
         //debugger
     }
 
-    addToDropDown(){
-        const runType = document.createElement('runType')
-        runType.value = this.id
-        runType.innerText = this.run_type;
-        this.addToDropDown.appendChild(runType)
-    }
+    // addToDropDown(){
+    //     const runType = document.createElement('runType')
+    //     runType.value = this.id
+    //     runType.innerText = this.run_type;
+    //     this.addToDropDown.appendChild(runType)
+    // }
 
     attachToDom(){
         Run.container.appendChild(this.render())

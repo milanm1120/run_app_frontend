@@ -13,9 +13,9 @@
     <title>RunTracker App</title>
 </head>
 <body>
-        <div id="run-form">
-            <h2> Add A Run</h2>
-            <form id="run-form">
+        <div id="run-form-container">
+            <form action="/action_page.php" id="run-form">
+                <h2> Add A Run</h2>
                 <div id="run-type-dropdown">
                     <label for= "run-type">Select Your Run:</label>
                     <select name="run-type" id="run-type">
@@ -32,11 +32,11 @@
                 </div>
                 <!-- <label for= "run-type">Run Type:</label>
                 <input type= "text" name= "type" id= "run-type" /><br> -->
-                <label for= "run-distance">Distance:</label>
-                <input type= "text" name= "distance" id= "run-distance" />(miles)<br>
-                <label for= "run-time">Time:</label>
-                <input type= "text" name= "time" id= "run-time" />(minutes)<br>
-                <label for= "run-comments">Comments:</label>
+                <label for= "run-distance">Distance in Miles:</label>
+                <input type= "text" name= "distance" id= "run-distance" /><br>
+                <label for= "run-time">Time in Minutes:</label>
+                <input type= "text" name= "time" id= "run-time" /><br>
+                <label for= "run-comments">Notes:</label>
                 <input type= "text" name= "comments" id= "run-comments" /><br>
                     <!-- <input type="text" name="runner" id="runner-name">
                     <input type="text" name="runner" id="runner-age">
@@ -47,7 +47,6 @@
                 <input type="Submit" value="Add Run" />
             </form>
         </div>
-        <div id="runners"></div>
         <div id="runs-container"></div>
 </body>
 </html>
