@@ -30,7 +30,8 @@ class Run {
             </div>
             
                 <!-- <button class="edit" data-id=${this.id}>Edit Run</button> -->
-                <button class="delete" data-id=${this.id}>Delete Run</button>
+                <button class="delete" data-id=${this.id} id="DeleteRunButton">Delete Run</button>
+                
         </div>
         `
         return this.element
