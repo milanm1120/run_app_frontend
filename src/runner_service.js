@@ -3,7 +3,7 @@ class RunnerService{
         this.port = port
     }
 
-    getRunners(){
+    fetchRunners(){
         fetch(`${this.port}/runners`)
         .then(response => response.json())
         .then(json => {

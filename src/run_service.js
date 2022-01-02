@@ -1,9 +1,9 @@
-class RunService {
+class RunService {                              //Also known as Adapters
     constructor(port){
         this.port = port
     }
 
-    getRuns(){
+    fetchRuns(){
         fetch(this.port + `/runs`)              //fetch request makes a promise to the server to grab the requested data
         .then(response => response.json())      //.then runs the coded event after the server requested is completed
         .then(data => {                         //.then return value is still a promise of the "body" of the original API data. 
@@ -36,7 +36,7 @@ class RunService {
         }
 
         fetch(this.port + `/runs`, configObject)
-        .then(response => response.json())
+        .then(response => response.json())          //'runs' returned jsonified
         .then(data => {
             const r = new Run(data)
             r.attachToDom()

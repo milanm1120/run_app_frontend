@@ -1,6 +1,7 @@
 class Run {
-    static all = [];
+    static all = [];           //static works like a class method (eg. @@all), keeps track of all onjects
     static container = document.getElementById("runs-container")
+    
     constructor({id, time, distance, run_type, comments, runner_id, runner})
     {
         this.id = id
@@ -10,11 +11,12 @@ class Run {
         this.comments = comments
         this.runner_id = runner_id
         this.runner = runner
+
         this.element = document.createElement('ul');
         this.element.dataset['id'] = id;
         this.element.id = `run-${id}`;
         this.element.addEventListener('click', this.handleClick)
-        Run.all.push(this)
+        Run.all.push(this)         //pushes all the created objects into the "all" Array defined on line 2
     }
         
 
@@ -27,11 +29,9 @@ class Run {
                 <h2 class= "distance">${this.distance}</h2> Miles<br>
                 <h2 class= "time">${this.time}</h2> Minutes
                 <p class= "comments">Notes:<br> ${this.comments}</p>
-            </div>
+</div>
             
-                <!-- <button class="edit" data-id=${this.id}>Edit Run</button> -->
-                <button class="delete" data-id=${this.id} id="DeleteRunButton">Delete Run</button>
-                
+                <button class="delete" data-id=${this.id} id="DeleteRunButton">Delete Run</button>   
         </div>
         `
         return this.element
