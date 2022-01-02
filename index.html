@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="style.css">   
         <script defer src="src/run.js"></script>
         <script defer src="src/run_service.js"></script>
-        <script defer src="src/runner.js"></script>
+        <script defer src="src/runner.js"></script>                 <!-- defer attribute prevents .js files from being loaded at these lines, until after index.html has loaded -->
         <script defer src="src/runner_service.js"></script>
         <script defer src="index.js"></script>
     <title>RunTracker App</title>
 </head>
 <body>
+
+
 
         <!-- Trigger/Open The Modal -->
         <button id="AddRunButton">Add Run</button>
@@ -59,7 +61,6 @@
                 </div>
             </div>
         </div>
-
         <div id="runs-container"></div>
 </body>
 </html>

@@ -42,38 +42,12 @@ class RunService {
         })
     }
 
-    // updateRun(run){
-    //     const {run_type, distance, time, comments, id} = run
-    //     const runInfo = {
-    //         run_type,
-    //         distance,
-    //         time,
-    //         comments
-    //     }
-
-    //     const configObject = {
-    //         method: 'PATCH',
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             Accept: "application/json"
-    //         },
-    //         body: JSON.stringify(runInfo)
-    //     }
-
-    //     fetch(`${this.port}/runs/${id}`, configObject)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         // const r = new Run(data)
-    //         run.render()
-    //     })
-    // }
-
     deleteRun(e){
         const id = e.target.dataset.id
         e.target.parentElement.remove()
         fetch(`${this.port}/runs/${id}`, {method: 'DELETE'})
         .then(response => response.json())
-        .then(json => alert(json.message))
+        .then(json => alert("Delete Successful"))
     }
 }
 

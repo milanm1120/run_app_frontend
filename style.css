@@ -20,6 +20,18 @@ h2 {
     cursor: pointer;
 }
 
+#AddRunnerButton {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
 #DeleteRunButton {
     width: 100%;
     background-color: #aa0404;
@@ -32,6 +44,10 @@ h2 {
 }
 
 #AddRunButton:hover {
+    background-color: #45a049;
+  }
+
+  #AddRunnerButton:hover {
     background-color: #45a049;
   }
 
@@ -171,5 +187,3 @@ input[type=text], select {
     text-align: center;
     justify-content: center;
   }
-
- 

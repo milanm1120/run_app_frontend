@@ -1,23 +1,27 @@
 const port = `http://localhost:3000`;
 const runCall = new RunService(port);
 const runnerCall = new RunnerService(port);
-const form = document.getElementById("run-form");
+const form = document.getElementById("run-form");   //Setting "run-form" (found in index.html line 29) to a constant "form". 
+const newrunnerform = document.getElementById("new-runner-form");
 const dropDown = document.getElementById("runner-dropdown");
 const runTypeValue = document.getElementById("run-type");
 const runTimeValue = document.getElementById("run-time");
 const runDistanceValue = document.getElementById("run-distance");
 const runCommentsValue = document.getElementById("run-comments");
-//const runnerIdValue = document.getElementById("run-comments");
 
 runCall.getRuns()
 runnerCall.getRunners()
 
-form.addEventListener('submit', handleSubmit)
+// To 'Submit' to form ---------------------------------------
+form.addEventListener('submit', handleSubmit)   //adding an eventListener to the variable "form"(defined above, line 4) listending for a form 'submit' to execute handleSubmit function(CALLBACK function).
 
-function handleSubmit(e){
-    e.preventDefault();
+function handleSubmit(e){     //used as a callback funciton in the .addEventListener on line 16
+  alert('A New Run Was Added')
+  console.log("A New Run Form Was Submitted", e.target)       //target tells us where the event occured
+  e.preventDefault();
     runCall.createRuns()
 }
+// ----------------------------------------------------------
 
 // Get the modal
 let modal = document.getElementById("AddModal");
@@ -51,3 +55,6 @@ window.onclick = function(event) {
 submit.onclick = function() {
       modal.style.display = "none";
   }
+
+
+  

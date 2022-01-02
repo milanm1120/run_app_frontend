@@ -37,57 +37,13 @@ class Run {
         return this.element
     }
 
-    // saveUpdatedRun(){
-    //     this.run_type = this.element.querySelector(".edit-run").value;
-    //     this.distance = this.element.querySelector(".edit-distance").value;
-    //     this.time = this.element.querySelector(".edit-time").value;
-    //     this.comments = this.element.querySelector(".edit-comments").value;
-    //     runCall.updateRun(this)
-    //     //debugger
-    // }
-
-    // handleClick = (e) => {
-    //     if(e.target.innerText === "Edit Run"){
-    //         console.log(e.target)
-    //             e.target.innerText = "Save Run"
-    //         this.createEditForm()
-    //     }else if(e.target.innerText === "Delete Run"){
-    //         console.log(e.target)
-    //         runCall.deleteRun(e)
-    //     }else if(e.target.innerText === "Save Run"){
-    //         console.log("saved")
-    //         e.target.innerText = "Edit Run"
-    //         this.saveUpdatedRun()
-    //     }
-    // }
-
     handleClick = (e) => {
         e.target.innerText === "Delete Run"
-            console.log(e.target)
             runCall.deleteRun(e)
     }
-
-    // createEditForm(){
-    //     const div = this.element.querySelector('div');
-    //     for(const element of div.children){
-    //         let inputValue = element.innerText;
-    //         let name = element.classList[0];
-    //         element.outerHTML = `<input type="text" class="edit-${name}" value="${inputValue}" />`
-    //     }
-    //     //debugger
-    // }
-
-    // addToDropDown(){
-    //     const runType = document.createElement('runType')
-    //     runType.value = this.id
-    //     runType.innerText = this.run_type;
-    //     this.addToDropDown.appendChild(runType)
-    // }
 
     attachToDom(){
         Run.container.appendChild(this.render())
     }
-
-    
 
 }
