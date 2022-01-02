@@ -4,13 +4,14 @@ class RunService {
     }
 
     getRuns(){
-        fetch(this.port + `/runs`)
-        .then(response => response.json())
-        .then(data => {
+        fetch(this.port + `/runs`)              //fetch request makes a promise to the server to grab the requested data
+        .then(response => response.json())      //.then runs the coded event after the server requested is completed
+        .then(data => {                         //.then return value is still a promise of the "body" of the original API data. 
             for(const run of data){
                 let r = new Run(run)
                 r.attachToDom()
             }
+            console.log("Respose is fullfilled")
         })
         .catch() 
     }
