@@ -1,5 +1,5 @@
 const port = `http://localhost:3000`;
-const runCall = new RunService(port);
+const runCall = new RunService(port);         //instanciates a new RunService object
 const runnerCall = new RunnerService(port);
 const form = document.getElementById("run-form");   //Setting "run-form" (found in index.html line 29) to a constant "form". 
 const newrunnerform = document.getElementById("new-runner-form");
@@ -9,8 +9,8 @@ const runTimeValue = document.getElementById("run-time");
 const runDistanceValue = document.getElementById("run-distance");
 const runCommentsValue = document.getElementById("run-comments");
 
-runCall.fetchRuns()         //getRuns() defined in run_services
-runnerCall.fetchRunners()   //getRunners()) defined in runner_services
+runCall.fetchRuns()         //fetchRuns() defined in run_services
+runnerCall.fetchRunners()   //fetchRunners()) defined in runner_services
 
 // To 'Submit' to form ---------------------------------------
 form.addEventListener('submit', handleSubmit)   //adding an eventListener to the variable "form"(defined above, line 4) listending for a form 'submit' to execute handleSubmit function(CALLBACK function).

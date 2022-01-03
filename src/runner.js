@@ -1,6 +1,6 @@
 class Runner {
     constructor({name, id}){            //constructors create and initialize and object instance of the class
-        this.name = name
+        this.name = name                
         this.id = id
     }
 

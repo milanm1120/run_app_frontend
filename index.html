@@ -9,7 +9,7 @@
         <script defer src="src/run_service.js"></script>
         <script defer src="src/runner.js"></script>                 <!-- defer attribute prevents .js files from being loaded at these lines, until after index.html has loaded -->
         <script defer src="src/runner_service.js"></script>
-        <script defer src="index.js"></script>
+        <script defer src="index.js"></script>                      <!-- Important that index.js is the last script file because it has gloabal variables-->
     <title>RunTracker App</title>
 </head>
 <body>
@@ -29,6 +29,7 @@
                     <form action="/action_page.php" id="run-form">
                         <h2> Add A Run</h2>
                         <div id="run-type-dropdown">
+                            <!-- Run Drop Down Menu-->
                             <label for= "run-type">Select Your Run:</label>
                             <select name="run-type" id="run-type">
                                 <option value="">--select--</option>
@@ -42,25 +43,22 @@
                                 <option value="Recovery Run">Recovery Run</option>
                             </select>
                         </div>
-                        <!-- <label for= "run-type">Run Type:</label>
-                        <input type= "text" name= "type" id= "run-type" /><br> -->
+                            <!----------------------->
                         <label for= "run-distance">Distance in Miles:</label>
                         <input type= "text" name= "distance" id= "run-distance" /><br>
                         <label for= "run-time">Time in Minutes:</label>
                         <input type= "text" name= "time" id= "run-time" /><br>
                         <label for= "run-comments">Notes:</label>
                         <input type= "text" name= "comments" id= "run-comments" /><br>
-                            <!-- <input type="text" name="runner" id="runner-name">
-                            <input type="text" name="runner" id="runner-age">
-                            <input type="text" name="runner" id="runner-gender">
-                            <input type="text" name="runner" id="runner-height">
-                            <input type="text" name="runner" id="runner-weight"> -->
+                            
                         <select name="runner_id" id="runner-dropdown"></select><br>
                         <input id="Submit" type="Submit" value="Add Run" />
                     </form>
                 </div>
             </div>
         </div>
+
+        <!-- View Runs-->
         <div id="runs-container"></div>          <!-- Runs will show up here -->
 </body>
 </html>

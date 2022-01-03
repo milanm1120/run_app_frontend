@@ -2,17 +2,17 @@ class Run {
     static all = [];           //static works like a class method (eg. @@all), keeps track of all onjects
     static container = document.getElementById("runs-container")
     
-    constructor({id, time, distance, run_type, comments, runner_id, runner})
+    constructor({id, time, distance, run_type, comments, runner_id, runner})       //using the "descructure" method here
     {
         this.id = id
         this.time = time
         this.distance = distance
-        this.run_type = run_type
+        this.run_type = run_type            //"this" represents the class Object, like "self" in Ruby, in this example this = Run
         this.comments = comments
         this.runner_id = runner_id
         this.runner = runner
 
-        this.element = document.createElement('ul');
+        this.element = document.createElement('ul');   //creates an 'ul' item each time a new object is created
         this.element.dataset['id'] = id;
         this.element.id = `run-${id}`;
         this.element.addEventListener('click', this.handleClick)
@@ -20,8 +20,8 @@ class Run {
     }
         
 
-    render(){
-        this.element.innerHTML = `
+    render(){                               //this.element represents 'ul' as defined in line 15 above
+        this.element.innerHTML = `                      
         <div id="runs-card">
             <div data-id="${this.id}">
                 <h2 class= "runner_id">-${this.runner.name}-</h3>
@@ -34,10 +34,10 @@ class Run {
                 <button class="delete" data-id=${this.id} id="DeleteRunButton">Delete Run</button>   
         </div>
         `
-        return this.element
+        return this.element         //explicitly calling a return 
     }
 
-    handleClick = (e) => {
+    handleClick = (e) => {              //import for handleClick to be an arrow function becuase of .this
         e.target.innerText === "Delete Run"
             runCall.deleteRun(e)
     }
