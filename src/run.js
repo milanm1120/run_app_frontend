@@ -1,6 +1,6 @@
 class Run {
     static all = [];           //static works like a class method (eg. @@all), keeps track of all onjects
-    static container = document.getElementById("runs-container")
+    static container = document.getElementById("runs-container")        //grabbing an element by its ID in the "runs-container" in index.html and setting it equal to "container"
     
     constructor({id, time, distance, run_type, comments, runner_id, runner})       //using the "descructure" method here
     {
@@ -13,17 +13,17 @@ class Run {
         this.runner = runner
 
         this.element = document.createElement('ul');   //creates an 'ul' item each time a new object is created
-        this.element.dataset['id'] = id;
-        this.element.id = `run-${id}`;
+        this.element.dataset['id'] = id;                //creating 'id' variable inside 'ul'
+        this.element.id = `run-${id}`;                  //setting the 'id' equal to 'run-{dataset_id}'
         this.element.addEventListener('click', this.handleClick)
-        Run.all.push(this)         //pushes all the created objects into the "all" Array defined on line 2
+        Run.all.push(this)         //pushes each object("this") that is created into the "all" Array defined on line 2
     }
         
 
     render(){                               //this.element represents 'ul' as defined in line 15 above
         this.element.innerHTML = `                      
         <div id="runs-card">
-            <div data-id="${this.id}">
+            <div data-id="${this.id}">             
                 <h2 class= "runner_id">-${this.runner.name}-</h3>
                 <h3 class= "run type">${this.run_type}</h3>
                 <h2 class= "distance">${this.distance}</h2> Miles<br>

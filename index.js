@@ -1,8 +1,8 @@
 const port = `http://localhost:3000`;
-const runCall = new RunService(port);         //instanciates a new RunService object
-const runnerCall = new RunnerService(port);
+const runCall = new RunService(port);         //instanciates a new RunService object used in the constructor on line 2 of run_servies.js
+const runnerCall = new RunnerService(port);   
 const form = document.getElementById("run-form");   //Setting "run-form" (found in index.html line 29) to a constant "form". 
-const newrunnerform = document.getElementById("new-runner-form");
+const newRunner = document.getElementById("runner-name");
 const dropDown = document.getElementById("runner-dropdown");
 const runTypeValue = document.getElementById("run-type");
 const runTimeValue = document.getElementById("run-time");
@@ -18,8 +18,9 @@ form.addEventListener('submit', handleSubmit)   //adding an eventListener to the
 function handleSubmit(e){     //used as a callback funciton in the .addEventListener on line 16
   alert('A New Run Was Added')
   console.log("A New Run Form Was Submitted", e.target)       //target tells us where the event occured
-  e.preventDefault();
+  e.preventDefault();                                          //prevents page refresh
     runCall.createRuns()
+    document.getElementById("run-form").reset();              //resets the form after submission
 }
 // ----------------------------------------------------------
 

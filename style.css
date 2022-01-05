@@ -1,7 +1,8 @@
 body {
-    background-color: whitesmoke;
     background-image: url(rZ2COW.jpg);
-    background-size: 100%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h2 {
