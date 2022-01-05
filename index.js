@@ -5,6 +5,7 @@ const form = document.getElementById("run-form");   //Setting "run-form" (found 
 const newRunner = document.getElementById("runner-name");
 const dropDown = document.getElementById("runner-dropdown");
 const runTypeValue = document.getElementById("run-type");
+const runDateValue = document.getElementById("run-date");
 const runTimeValue = document.getElementById("run-time");
 const runDistanceValue = document.getElementById("run-distance");
 const runCommentsValue = document.getElementById("run-comments");

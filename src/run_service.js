@@ -20,6 +20,7 @@ class RunService {                              //Also known as Adapters
         const runInfo = {
             run: {
                run_type: runTypeValue.value,
+               run_date: runDateValue.value,
                time: runTimeValue.value,
                distance: runDistanceValue.value,      //All Values defined as constaints in index.js.
                comments: runCommentsValue.value,

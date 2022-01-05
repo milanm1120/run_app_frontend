@@ -2,12 +2,13 @@ class Run {
     static all = [];           //static works like a class method (eg. @@all), keeps track of all onjects
     static container = document.getElementById("runs-container")        //grabbing an element by its ID in the "runs-container" in index.html and setting it equal to "container"
     
-    constructor({id, time, distance, run_type, comments, runner_id, runner})       //using the "descructure" method here
+    constructor({id, time, distance, run_date, run_type, comments, runner_id, runner})       //using the "descructure" method here
     {
         this.id = id
         this.time = time
         this.distance = distance
         this.run_type = run_type            //"this" represents the class Object, like "self" in Ruby, in this example this = Run
+        this.run_date = run_date
         this.comments = comments
         this.runner_id = runner_id
         this.runner = runner
@@ -25,7 +26,8 @@ class Run {
         <div id="runs-card">
             <div data-id="${this.id}">             
                 <h2 class= "runner_id">-${this.runner.name}-</h3>
-                <h3 class= "run type">${this.run_type}</h3>
+                <h3 class= "run_type">${this.run_type}</h3>
+                <h3 class= "run_date">${this.run_date}</h3>
                 <h2 class= "distance">${this.distance}</h2> Miles<br>
                 <h2 class= "time">${this.time}</h2> Minutes
                 <p class= "comments">Notes:<br> ${this.comments}</p>
