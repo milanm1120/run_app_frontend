@@ -9,6 +9,7 @@ class RunnerService{
         .then(json => {
             json.forEach(element => {
                 const r = new Runner(element)
+                // debugger
                 r.addToDropDown()
             })
         })

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">   
         <script defer src="src/run.js"></script>
-        <script defer src="src/run_service.js"></script>
-        <script defer src="src/runner.js"></script>                 <!-- defer attribute prevents .js files from being loaded at these lines, until after index.html has loaded -->
+        <script defer src="src/run_service.js"></script>            <!-- script files are connect .js files-->
+        <script defer src="src/runner.js"></script>                 <!-- defer attribute prevents .js files from being loaded at these lines, until after index.html has loaded, making it asyncronys -->
         <script defer src="src/runner_service.js"></script>
         <script defer src="index.js"></script>                      <!-- Important that index.js is the last script file because it has gloabal variables-->
     <title>RunTracker App</title>
@@ -65,5 +65,15 @@
 
         <!-- View Runs-->
         <div id="runs-container"></div>          <!-- Runs will show up here -->
+
+
+
+
+                    <div id="user-comments-div"> submitted comments will appear here inside this div </div>
+
+            <form id="user-comments-form">
+                <input id="user-comments-input"  type="text">
+                <input id="user-comments-submit"  type="submit">
+            </form>
 </body>
 </html>

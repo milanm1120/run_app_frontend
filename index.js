@@ -10,8 +10,9 @@ const runTimeValue = document.getElementById("run-time");
 const runDistanceValue = document.getElementById("run-distance");
 const runCommentsValue = document.getElementById("run-comments");
 
+
 runCall.fetchRuns()         //fetchRuns() defined in run_services
-runnerCall.fetchRunners()   //fetchRunners()) defined in runner_services
+runnerCall.fetchRunners()   //fetchRunners() defined in runner_services
 
 // To 'Submit' to form ---------------------------------------
 form.addEventListener('submit', handleSubmit)   //adding an eventListener to the variable "form"(defined above, line 4) listending for a form 'submit' to execute handleSubmit function(CALLBACK function).
@@ -19,8 +20,9 @@ form.addEventListener('submit', handleSubmit)   //adding an eventListener to the
 function handleSubmit(e){     //used as a callback funciton in the .addEventListener on line 16
   alert('A New Run Was Added')
   console.log("A New Run Form Was Submitted", e.target)       //target tells us where the event occured
-  e.preventDefault();                                          //prevents page refresh
-    runCall.createRuns()
+  e.preventDefault(); 
+  // debugger                                         //prevents page refresh
+    runCall.createRuns();
     document.getElementById("run-form").reset();              //resets the form after submission
 }
 // ----------------------------------------------------------
@@ -58,5 +60,9 @@ submit.onclick = function() {
       modal.style.display = "none";
   }
 
+
+  let commentTest = document.querySelector("#user-comments-form");
+  commentTest.innerHTML
+  
 
   

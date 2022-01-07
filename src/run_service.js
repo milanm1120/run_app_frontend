@@ -27,13 +27,13 @@ class RunService {                              //Also known as Adapters
                runner_id: dropDown.value
             }
         }
-        const configObject = {
+        const configObject = {                      //3 things needed for a create: method, heaader and body
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",   //"Content-Type" is sending the information to json. "Content-Type" is in quotes because of the dash(-)
                 Accept: "application/json"              //Accept is receiving data from json.
             },
-            body: JSON.stringify(runInfo)           //chaning the JSON data to string, the JSON body info defined in runInfo
+            body: JSON.stringify(runInfo)           //changing the JSON data to string, the JSON body info defined in runInfo
         }
 
         fetch(this.port + `/runs`, configObject)    //
@@ -43,6 +43,10 @@ class RunService {                              //Also known as Adapters
             r.attachToDom()
         })
     }
+
+    // updateRun(run){
+        
+    // }
 
     deleteRun(e){
         const id = e.target.dataset.id
